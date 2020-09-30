@@ -1,0 +1,39 @@
+<idea-plugin>
+    <id>org.simple.enc</id>
+    <name>Decoder</name>
+    <vendor email="owler@tut.by" url="https://github.com/owler">DS</vendor>
+
+    <description><![CDATA[
+        <b>PBEWithMD5AndDES Decoder/Encoder</b><br/>
+        Decode selected text like ENC() and save result into clipboard<br/>
+        Hot key [Ctrl + Alt + D]<br/>
+        Encode any selected text and save result into clipboard<br/>
+        Hot key [Ctrl + Alt + E]<br/>
+        Go to <b>Settings: Tools: Decoder</b> to set <i>Encryption key</i>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectConfigurable groupId="tools" displayName="Decoder" id="preferences.Decoder"
+                             instance="org.simple.enc.DecoderSettings"/>
+        <projectService
+                serviceImplementation="org.simple.enc.DecoderConfig"/>
+    </extensions>
+
+    <actions>
+        <action id="decryptor" class="org.simple.enc.DecodeAction"
+                text="Decode" description="Decode">
+            <add-to-group group-id="EditorPopupMenu"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt D"/>
+        </action>
+        <action id="encryptor" class="org.simple.enc.EncodeAction"
+                text="Encode" description="Encode">
+            <add-to-group group-id="EditorPopupMenu"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt E"/>
+        </action>
+    </actions>
+</idea-plugin>

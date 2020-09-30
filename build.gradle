@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.18'
+}
+
+group 'org.simple.enc'
+version '1.1'
+buildSearchableOptions.enabled = false
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.jasypt', name: 'jasypt', version: '1.9.0'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.1'
+}
+patchPluginXml {
+    untilBuild 222
+    changeNotes """
+      <b>Troubleshooting</b><br>
+      Idea complains about incompatible version?<br>
+      Edit plugin.xml inside zip file: set until-build bigger than your idea version.<br>
+      Big chance it will help.
+        """
+}

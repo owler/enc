@@ -51,6 +51,6 @@ public class DecoderConfig implements PersistentStateComponent<DecoderConfig> {
     }
 
     public static DecoderConfig getInstance(Project project) {
-        return ServiceManager.getService(project, DecoderConfig.class);
+        return project.getService(DecoderConfig.class);
     }
 }

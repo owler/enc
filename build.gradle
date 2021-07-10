@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'org.jasypt', name: 'jasypt', version: '1.9.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.jasypt', name: 'jasypt', version: '1.9.0'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
@@ -24,6 +24,7 @@ intellij {
 
 patchPluginXml {
     version = '1.2'
+    sinceBuild = "201.*"
     untilBuild = "232.*"
     changeNotes = """
       Remove usage of deprecated api"""

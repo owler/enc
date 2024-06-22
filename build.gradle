@@ -29,9 +29,9 @@ java {
     }
 }
 patchPluginXml {
-    version = '1.4'
-    sinceBuild = "240.*"
+    version = '1.5'
+    sinceBuild = "223.8836.41"
     changeNotes = """
-      incremental update to fit new Idea"""
+      incremental update fix descriptor"""
 }
 

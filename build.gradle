@@ -30,7 +30,7 @@ java {
 }
 patchPluginXml {
     version = '1.6'
-    sinceBuild = "241."
+    sinceBuild = "241"
     changeNotes = """
       incremental update up lib versins"""
 }

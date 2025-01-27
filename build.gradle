@@ -12,14 +12,14 @@ repositories {
 }
 
 dependencies {
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
-    implementation group: 'org.jasypt', name: 'jasypt', version: '1.9.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.1'
+    implementation group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     pluginName = "Decoder"
-    version = "2024.1"
+    version = "2024.3"
     type = "IU"
     updateSinceUntilBuild.set(false)
 }
@@ -29,9 +29,9 @@ java {
     }
 }
 patchPluginXml {
-    version = '1.5'
-    sinceBuild = "223.8836.41"
+    version = '1.6'
+    sinceBuild = "241."
     changeNotes = """
-      incremental update fix descriptor"""
+      incremental update up lib versins"""
 }
 

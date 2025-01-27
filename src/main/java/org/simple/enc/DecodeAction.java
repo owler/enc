@@ -14,10 +14,10 @@ import java.awt.datatransfer.StringSelection;
 public class DecodeAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
-        DecoderConfig conf = DecoderConfig.getInstance(e.getRequiredData(CommonDataKeys.PROJECT));
+        DecoderConfig conf = DecoderConfig.getInstance(e.getData(CommonDataKeys.PROJECT));
 
 
-        final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+        final Editor editor = e.getData(CommonDataKeys.EDITOR);
         CaretModel caretModel = editor.getCaretModel();
         if (caretModel.getCurrentCaret().hasSelection()) {
             String query = caretModel.getCurrentCaret().getSelectedText();
@@ -42,7 +42,7 @@ public class DecodeAction extends AnAction {
      */
     @Override
     public void update(AnActionEvent e) {
-        final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+        final Editor editor = e.getData(CommonDataKeys.EDITOR);
         CaretModel caretModel = editor.getCaretModel();
         e.getPresentation().setEnabledAndVisible(caretModel.getCurrentCaret().hasSelection() &&
                 caretModel.getCurrentCaret().getSelectedText().startsWith("ENC(") &&
